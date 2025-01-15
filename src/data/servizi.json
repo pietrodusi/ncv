@@ -1,0 +1,27 @@
+[
+    { 
+        "id": 1,
+        "name": "Routine Checkups",
+        "description": "Regular health assessments to keep your pet healthy." 
+    },
+    {  "id": 2,
+        "name": "Vaccinations",
+        "description": "Prevent diseases with timely vaccinations."
+    },
+    {   "id": 3,
+        "name": "Surgery",
+        "description": "Advanced surgical care when your pet needs it most."
+    },
+    {   "id": 4,
+        "name": "Dental Care",
+        "description": "Comprehensive dental services for your pet’s oral health."
+    },
+    {   "id": 5,
+        "name": "Nutrition Advice",
+        "description": "Personalized diet plans for optimal health."
+    },
+    {   "id": 6,
+        "name": "Emergency Care",
+        "description": "24/7 emergency support for critical situations."
+    }
+]

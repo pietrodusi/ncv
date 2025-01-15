@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "Ryu",
+        "position": "CEO",
+        "image": "https://sm.ign.com/t/ign_it/screenshot/default/ryu_r67v.1280.jpg",
+        "description": "Ryu (リュウ(隆) Ryū?, lit. \"Prosperous\", \"Plentiful\", \"Abundant\") is the main protagonist of the Street Fighter series, first appearing in the original Street Fighter.[23] He is an experienced martial artist, highly focused on his training, aiming to become the strongest he can."
+    },
+    {
+        "id": 2,
+        "name": "Vega",
+        "position": "Bodyguard",
+        "image": "https://i.pinimg.com/736x/8d/1b/5a/8d1b5a164433206c79b3c3283d200a4f.jpg",
+        "description": "Vega, known as Balrog (バルログ Barurogu?) in Japan, is a video game character from the Street Fighter series, first appearing as a non-playable boss in Street Fighter II before becoming playable in its update, Street Fighter II: Champion Edition. He is a claw-wielding, narcissistic Spanish ninja obsessed with beauty who also serves as a personal bodyguard to M. Bison."
+    },
+    {
+        "id": 3,
+        "name": "Akuma",
+        "position": "Demon",
+        "image": "https://www.streetfighter.com/6/assets/images/character/gouki_akuma/gouki_akuma.png",
+        "description": "Akuma, known in Japan as Gouki (ゴウキ(豪鬼) Gōki?, \"Fortitude\", \"Great Demon\", \"Great Devil\" or \"Great Ogre\"), is a video game character and major antagonist of the Street Fighter series, first appearing in Super Street Fighter II Turbo as a hidden final boss. He is an emotionless and powerful warrior fixated on mastering the Satsui no Hado, and the younger brother of Gouken."
+    },
+    {
+        "id": 4,
+        "name": "Akuma",
+        "position": "Demon",
+        "image": "https://www.streetfighter.com/6/assets/images/character/gouki_akuma/gouki_akuma.png",
+        "description": "Akuma, known in Japan as Gouki (ゴウキ(豪鬼) Gōki?, \"Fortitude\", \"Great Demon\", \"Great Devil\" or \"Great Ogre\"), is a video game character and major antagonist of the Street Fighter series, first appearing in Super Street Fighter II Turbo as a hidden final boss. He is an emotionless and powerful warrior fixated on mastering the Satsui no Hado, and the younger brother of Gouken."
+    }
+]
