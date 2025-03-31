@@ -20,9 +20,10 @@ export default function Hero(props) {
           </button>
         </div>
         <img
-          src="https://via.placeholder.com/600x400"
+          src="https://slidemodel.com/wp-content/uploads/70029-01-veterinary-template-4.jpg"
           alt="Veterinary Care"
           className="hidden lg:block rounded shadow-lg"
+          width="600px"
         />
       </div>
     </section>
