@@ -10,7 +10,10 @@ export default {
         ncvColor: {
           DEFAULT: "#088898",
           light: "#37aebd",
-          dark: "#087298"
+          dark: "#087298",
+          grey: "#7da7b0",
+          blud: "1a6db5",
+          orange: "#e76c1d"
         }
       }
     },

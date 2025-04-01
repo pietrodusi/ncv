@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../images/logo_ncv_alt.svg';
+import logo from '../images/LOGO DEFINITIVO-03.png';
 
 export default function Header (props) {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,9 +14,9 @@ export default function Header (props) {
   );
 
   return (
-    <header className="sticky top-0 bg-ncvColor text-white shadow-sm shadow-ncvColor-dark">
-      <div className="container mx-auto flex justify-between items-center py-5 px-4 lg:px-8 mb-10">
-        <img src={logo} width="500px" alt="Nuova Clinica Veterinaria val d'Elsa" onClick={props.handleClick} id="Home" />
+    <header className="sticky top-0 bg-white text-white shadow-lg shadow-ncvColor-grey">
+      <div className="container mx-auto flex justify-between items-center px-4 lg:px-8 mb-10">
+        <img src={logo} width="300px" alt="Nuova Clinica Veterinaria val d'Elsa" onClick={props.handleClick} id="Home" />
         <button
           className="block lg:hidden text-2xl focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
