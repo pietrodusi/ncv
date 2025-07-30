@@ -25,7 +25,7 @@ export default function ChiSiamo () {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
           {team.map((member, index) => (
             <div
-              key={member.id} className={`flex flex-col sm:flex-row ${index % 2 === 0 ? 'sm:flex-row-reverse' : ''} sm:items-center gap-6 mx-5`}
+              key={member.id} className={`flex flex-col sm:flex-row ${index % 2 === 0 ? 'sm:flex-row-reverse' : ''} sm:items-center gap-9 mx-8`}
             >
               <div className="sm:w-1/2">
                 <img

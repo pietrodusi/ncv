@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default function Hero(props) {
+export default function Home(props) {
   return (
-    <section className="bg-teal-600 text-white py-16">
+    <section className="bg-ncvColor-orange text-white py-16">
       <div className="container mx-auto px-4 text-center lg:text-left lg:flex lg:items-center lg:justify-between">
         <div className="lg:max-w-lg">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mb-4">

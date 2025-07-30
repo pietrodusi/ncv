@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Header from './components/Header';
-import Hero from './components/Hero';
+import Home from './components/Home';
 import Footer from './components/Footer';
 import Contatti from './components/Contatti';
 import Servizi from './components/Servizi';
@@ -17,7 +17,7 @@ export default function App() {
   function showPage() {
     switch (page) {
       case 'Home':
-        return <Hero page={page} setPage={setPage} handleClick={handleClick} />;
+        return <Home page={page} setPage={setPage} handleClick={handleClick} />;
       case 'ChiSiamo':
         return <ChiSiamo />;
       case 'Contatti':
@@ -25,7 +25,7 @@ export default function App() {
       case 'Servizi':
         return <Servizi />
       default:
-        return <Hero />;
+        return <Home />;
     }
   }
 

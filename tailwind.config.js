@@ -12,7 +12,7 @@ export default {
           light: "#37aebd",
           dark: "#087298",
           grey: "#7da7b0",
-          blud: "1a6db5",
+          blue: "#1a6db5",
           orange: "#e76c1d"
         }
       }
