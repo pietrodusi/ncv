@@ -6,7 +6,7 @@ import OldSite from './oldSite';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <App /> */}
+    {/* <App className="font-[Gotham]"/> */}
     <OldSite />
   </React.StrictMode>
 );

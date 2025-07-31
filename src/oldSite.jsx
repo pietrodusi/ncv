@@ -35,7 +35,7 @@ export default function OldSite()
         </div>
         <div className="email">
           <FontAwesomeIcon icon={faEnvelope} className="fa fa-envelope"/>
-            <i className="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:ncvvaldelsa@gmail.com" itemProp="email">ncvvaldelsa@gmail.com</a>
+            <i className="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:info@ncvvaldelsa.it" itemProp="email">info@ncvvaldelsa.it</a>
         </div>
         <div className="timetable">
             <meta itemProp="openingHours" content="Mo,Tu,We,Th,Fr 09:30-20:00" />

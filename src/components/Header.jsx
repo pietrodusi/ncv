@@ -15,7 +15,7 @@ export default function Header (props) {
 
   return (
     <header className="sticky top-0 bg-white text-white shadow-lg shadow-ncvColor-grey">
-      <div className="container mx-auto flex justify-between items-center px-4 lg:px-8 mb-10">
+      <div className="container mx-auto flex justify-between items-center px-4 lg:px-8 mb-10 max-h-[300px]">
         <img src={logo} width="300px" alt="Nuova Clinica Veterinaria val d'Elsa" onClick={props.handleClick} id="Home" />
         <button
           className="block lg:hidden text-2xl focus:outline-none"
