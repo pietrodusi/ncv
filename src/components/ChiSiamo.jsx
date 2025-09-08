@@ -1,50 +1,52 @@
 import React from 'react';
 import team from '../data/team.json';
+import { useRef } from "react";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 
 export default function ChiSiamo () {
-
   return (
-    <section id="about" className="py-12 bg-white space-y-[100px]">
-      <div className="container mx-auto flex flex-col lg:flex-row items-center gap-8 px-4">
-        <img
-          src="https://slidemodel.com/wp-content/uploads/70029-01-veterinary-template-4.jpg"
-          alt="Veterinarian with a pet"
-          className="rounded shadow-lg w-full lg:w-1/2"
-        />
-        <div className="lg:max-w-lg">
-          <h2 className="text-3xl font-serif font-bold mb-4">About Us</h2>
-          <p className="text-lg text-gray-700 leading-relaxed">
-            At Paws & Care, we pride ourselves on providing exceptional veterinary services. Our experienced team
-            is dedicated to ensuring the health and happiness of your pets.
-          </p>
-        </div>
-      </div>
-      
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-serif font-bold text-center mb-[80px]">Il nostro Team</h2>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
-          {team.map((member, index) => (
-            <div
-              key={member.id} className={`flex flex-col sm:flex-row ${index % 2 === 0 ? 'sm:flex-row-reverse' : ''} sm:items-center gap-9 mx-8`}
-            >
-              <div className="sm:w-1/2">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="rounded shadow-lg object-cover w-full h-[500px]"
-                />
-              </div>
-              <div className="sm:w-1/2 flex flex-col justify-center m-3">
-                <h1 className={`text-2xl font-bold ${index % 2 === 0 ? 'sm:text-right' : 'sm:text-left'} sm:items-center gap-6 text-center mb-3`}>{member.name}</h1>
-                <h2 className={`text-xl ${index % 2 === 0 ? 'sm:text-right' : 'sm:text-left'} sm:items-center gap-6 text-center mb-2`}>{member.position}</h2>
-                <p className="text-gray-700 text-justify">{member.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+   <section className="relative w-full py-16 w-[1500px] mx-auto" id="Ilnostroteam">
+      <h2 className="text-4xl font-semibold text-center mb-[100px]">Il nostro team</h2>
 
+      <Swiper
+        modules={[Navigation]}
+        loop={true}
+        style={{
+          "--swiper-navigation-color": "#1a6db5",
+        }}
+        spaceBetween={25}
+        slidesPerView={"auto"}
+        navigation
+        className="px-4"
+      >
+        {team.map((member) => (
+          <SwiperSlide
+            key={member.id}
+            className="flex-shrink-0 w-[350px] h-[600px] bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col border-2 bg-ncvColor-grey/20 "
+          >
+            {/* Staff photo */}
+            <img
+              src={member.image}
+              alt={member.name}
+              className="h-3/4 w-full object-cover filter grayscale hover:grayscale-0 transition duration-500 ease-in-out transform hover:scale-105"
+            />
+
+            {/* Text section */}
+            <div className="flex flex-col items-center justify-center h-1/4 pt-0 px-[10px]">
+              <h3 className="text-xl font-semibold text-gray-800">{member.name}</h3>
+              <p className="text-gray-500">{member.role}</p>
+              <p className="text-gray-600 text-m mt-2 text-center">{member.description}</p>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </section>
+
   );
 };
 

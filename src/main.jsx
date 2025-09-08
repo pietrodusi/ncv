@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
-import OldSite from './oldSite';
+// import OldSite from './oldSite';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <App className="font-[Gotham]"/> */}
-    <OldSite />
+    <App />
+    {/* <OldSite /> */}
   </React.StrictMode>
 );

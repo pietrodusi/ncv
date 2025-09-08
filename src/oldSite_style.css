@@ -4,10 +4,6 @@ body {
   margin: auto;
 }
 
-html {
-  border-top: 2px solid #088898;
-}
-
 img {
   margin: 100px 30px;
   max-width: 500px;

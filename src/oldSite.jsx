@@ -44,6 +44,7 @@ export default function OldSite()
          <table>
            <tbody>
              <tr>
+              
                <td className="days">
                  Lun-Ven
                </td>
