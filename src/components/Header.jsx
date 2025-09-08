@@ -8,29 +8,30 @@ export default function Header (props) {
 
   return (
     <div className="border-b-ncvColor-grey border-b-2 sticky top-0 bg-white z-50">
-      {/* <div className="bg-ncvColor-blue h-[40px]"> 
-      </div> */}
-      <header className="sticky top-0 text-white shadow-md shadow-ncvColor-grey h-[120px] justify-center flex">
-        
-        <div className="container flex justify-between items-center h-full py-[5px] max-w-[55%]">
-          {/* <img src={logo} alt="Nuova Clinica Veterinaria val d'Elsa" onClick={props.handleClick} id="Home" className="max-w-[400px] max-h-full"/> */}
-          <img src={logo} alt="Nuova Clinica Veterinaria val d'Elsa" onClick={props.handleClick} id="Home" className="max-w-[400px] max-h-full"/>
+      <header className="sticky top-0 text-white shadow-md shadow-ncvColor-grey h-[80px] md:h-[120px] flex justify-center">
+        <div className="container flex justify-between items-center h-full py-2 px-4 md:px-0 w-full max-w-7xl">
+          <img
+            src={logo}
+            alt="Nuova Clinica Veterinaria val d'Elsa"
+            onClick={props.handleClick}
+            id="Home"
+            className="max-h-[60px] md:max-h-full w-auto cursor-pointer"
+          />
           <button
-            className="block lg:hidden text-2xl focus:outline-none"
+            className="block lg:hidden text-3xl text-ncvColor-blue focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle navigation"
           >
             ☰
           </button>
           <nav
             className={`${
               isOpen ? 'block' : 'hidden'
-            } absolute lg:static w-full lg:w-auto left-0 top-14 lg:top-auto lg:block`}
+            } absolute bg-white left-0 top-[80px] w-full shadow-md lg:shadow-none lg:static lg:w-auto lg:block z-40`}
           >
-
-            <ul className="flex flex-col lg:flex-row lg:space-x-[60px] text-center lg:text-left font-semibold text-xl">
+            <ul className="flex flex-col lg:flex-row lg:space-x-12 text-center lg:text-left font-semibold text-lg md:text-xl py-4 lg:py-0">
               {navbarButtons.map((button) => 
                 <li key={button}>
-                  {/* rounded-md  block bg-ncvColor-blue py-3 px-4 min-w-[150px] min-h-[65px] */}
                   <button
                     name={button.replace(/ /g, '')}
                     onClick={() => {
@@ -40,14 +41,14 @@ export default function Header (props) {
                         const sectionId = button.replace(/ /g, "");
                         const section = document.getElementById(sectionId);
                         if (section) {
-                          // adjust this value to match your navbar height
                           const yOffset = -100; 
                           const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
                           window.scrollTo({ top: y, behavior: "smooth" });
                         }
                       }
+                      setIsOpen(false);
                     }}
-                    className="text-ncvColor-blue hover:text-ncvColor-orange transition"
+                    className="text-ncvColor-blue hover:text-ncvColor-orange transition px-4 py-2 block"
                   >
                     {button}
                   </button>
