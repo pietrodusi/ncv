@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 
 export default function ChiSiamo () {
   return (
-   <section className="relative w-full py-16 w-[1500px] mx-auto" id="Ilnostroteam">
+   <section className="relative py-16 w-[1500px] mx-auto" id="Ilnostroteam">
       <h2 className="text-4xl font-semibold text-center mb-[100px]">Il nostro team</h2>
 
       <Swiper
