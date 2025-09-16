@@ -8,7 +8,7 @@ export default function Header (props) {
 
   return (
     <div className="border-b-ncvColor-grey border-b-2 sticky top-0 bg-white z-50">
-      <header className="sticky top-0 text-white shadow-md shadow-ncvColor-grey h-[80px] md:h-[120px] flex justify-center">
+      <header className="sticky top-0 text-white shadow-md shadow-ncvColor-grey h-[80px] md:h-[100px] flex justify-center">
         <div className="container flex justify-between items-center h-full py-2 px-4 md:px-0 w-full max-w-7xl">
           <img
             src={logo}

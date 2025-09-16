@@ -71,7 +71,7 @@ export default function Home(props) {
       {/* CHI SIAMO */}
       <section id="Chisiamo" className="pt-16 md:pt-32">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center leading-relaxed px-4">
-          <img src={chiSiamoImage1} alt="Nuova Clinica Veterinaria val d'Elsa" className="w-full lg:w-1/2 h-64 md:h-[400px] lg:h-[500px] object-cover rounded-lg mb-8 lg:mb-0 lg:mr-12"/>
+          <img src={chiSiamoImage1} alt="Nuova Clinica Veterinaria val d'Elsa" className="w-full lg:w-1/2 h-64 md:h-[400px] lg:h-[500px] object-cover mb-8 lg:mb-0 lg:mr-12 lg:pr-[50px]"/>
           <div className="w-full lg:w-1/2">
             <div className="text-2xl md:text-3xl font-semibold mb-4">La nostra missione</div>
             <div className="text-justify">
@@ -80,7 +80,7 @@ export default function Home(props) {
             </div>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-center leading-relaxed mt-12 px-4">
+        <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-center leading-relaxed mt-16 px-4">
           <div className="w-full lg:w-1/2 mt-8 lg:mt-0">
             <div className="text-2xl md:text-3xl font-semibold mb-4">
               Sempre un passo in più
@@ -91,7 +91,7 @@ export default function Home(props) {
               Significa non accontentarsi del “sufficiente”, ma cercare sempre quel dettaglio in più che può fare la differenza nel percorso di cura.
             </div>
           </div>
-          <img src={chiSiamoImage2} alt="Nuova Clinica Veterinaria val d'Elsa" className="w-full lg:w-1/2 h-64 md:h-[400px] lg:h-[500px] object-cover rounded-lg mb-8 lg:mb-0 lg:ml-12"/>
+          <img src={chiSiamoImage2} alt="Nuova Clinica Veterinaria val d'Elsa" className="w-full lg:w-1/2 h-64 md:h-[400px] lg:h-[500px] object-cover mb-8 lg:mb-0 lg:ml-12 lg:pl-[50px]"/>
         </div>
       </section>  
       <div className="my-24" /> 
