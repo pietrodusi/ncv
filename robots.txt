@@ -1,0 +1,5 @@
+# robots.txt for Nuova Clinica Veterinaria Val d'Elsa
+User-agent: *
+Allow: /
+
+Sitemap: https://ncvvaldelsa.it/ncv2/sitemap.xml
