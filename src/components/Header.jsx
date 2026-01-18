@@ -1,63 +1,131 @@
-import React, { useState } from 'react';
-import logo from '../images/LOGO DEFINITIVO-03.png';
+import { useState, useEffect } from "react"
+import { Menu, X } from "lucide-react"
+import { Button } from "./ui/Button"
+import logo from '../public/LOGO DEFINITIVO-03.webp';
 
-export default function Header (props) {
-  const [isOpen, setIsOpen] = useState(false);
+export function Header() {
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-  const navbarButtons = ["Home", "Chi siamo", "Servizi", "Il nostro team", "Contatti"];
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  // Close mobile menu on Escape key
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === "Escape" && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false)
+      }
+    }
+    document.addEventListener("keydown", handleEscape)
+    return () => document.removeEventListener("keydown", handleEscape)
+  }, [isMobileMenuOpen])
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isMobileMenuOpen])
+
+  const navItems = [
+    { label: "Home", href: "home" },
+    { label: "Chi siamo", href: "chi-siamo" },
+    { label: "Servizi", href: "servizi" },
+    { label: "Il nostro team", href: "team" },
+    { label: "Contatti", href: "contatti" },
+  ]
 
   return (
-    <div className="border-b-ncvColor-grey border-b-2 sticky top-0 bg-white z-50">
-      <header className="sticky top-0 text-white shadow-md shadow-ncvColor-grey h-[80px] md:h-[100px] flex justify-center">
-        <div className="container flex justify-between items-center h-full py-2 px-4 md:px-0 w-full max-w-7xl">
-          <img
-            src={logo}
-            alt="Nuova Clinica Veterinaria val d'Elsa"
-            onClick={props.handleClick}
-            id="Home"
-            className="max-h-[60px] md:max-h-full w-auto cursor-pointer"
-          />
-          <button
-            className="block lg:hidden text-3xl text-ncvColor-blue focus:outline-none"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle navigation"
-          >
-            ☰
-          </button>
-          <nav
-            className={`${
-              isOpen ? 'block' : 'hidden'
-            } absolute bg-white left-0 top-[80px] w-full shadow-md lg:shadow-none lg:static lg:w-auto lg:block z-40`}
-          >
-            <ul className="flex flex-col lg:flex-row lg:space-x-12 text-center lg:text-left font-semibold text-lg md:text-xl py-4 lg:py-0">
-              {navbarButtons.map((button) => 
-                <li key={button}>
-                  <button
-                    name={button.replace(/ /g, '')}
-                    onClick={() => {
-                      if (button === "Home") {
-                        window.scrollTo({ top: 0, behavior: "smooth" });
-                      } else {
-                        const sectionId = button.replace(/ /g, "");
-                        const section = document.getElementById(sectionId);
-                        if (section) {
-                          const yOffset = -100; 
-                          const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                          window.scrollTo({ top: y, behavior: "smooth" });
-                        }
-                      }
-                      setIsOpen(false);
-                    }}
-                    className="text-ncvColor-blue hover:text-ncvColor-orange transition px-4 py-2 block"
-                  >
-                    {button}
-                  </button>
-                </li>)}
-            </ul>
-          </nav>
-        </div>
-      </header>
-    </div>
-  );
-};
+    <>
+      {/* Skip to content link for accessibility */}
+      <a
+        href="#chi-siamo"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded focus:outline-none"
+      >
+        Vai al contenuto principale
+      </a>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all ease-in-out ${isScrolled || isMobileMenuOpen ? "duration-700 bg-background/95 backdrop-blur-md shadow-md drop-shadow-md inset-shadow-sm" : "duration-200 bg-transparent"}} 
+      `}
+      >
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="flex items-center justify-between h-20 z-20">
+            <a href="#home" className="flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 rounded-lg">
+              <div
+                className={`absolute w-34 transition-all duration-400 ease-in-out  ${isScrolled || isMobileMenuOpen ? "lg:ml-[5%]" : "md:w-100 lg:w-150 lg:pt-50 lg:mt-30 w-[88dvw] mt-40 drop-shadow-[0_0_10px_rgba(0,0,0,0.9)] drop-shadow-[0_0_30px_rgba(0,0,0,0.7)] drop-shadow-[0_0_60px_rgba(0,0,0,0.5)]"} `}
+              >
+                <img src={logo} alt="NCV Logo"
+                  className={`w-full h-full object-contain 
+                          ${isScrolled || isMobileMenuOpen ? "" : ""}
+                    `}
+                />
+              </div>
+            </a>
 
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center gap-10" aria-label="Navigazione principale">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={`#${item.href}`}
+                  className={`text-lg font-medium transition-all relative group text-primary/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 rounded px-1 ${isScrolled ? "hover:text-primary" : "text-white [text-shadow:0_1px_4px_rgba(0,0,0,0.8),0_0_20px_rgba(0,0,0,0.6)]"}`}
+                >
+                  {item.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-ncvColor-orange transition-all group-hover:w-full" />
+                </a>
+              ))}
+              {/* <Button size="sm" className="bg-accent hover:bg-accent-light text-white">
+              Prenota visita
+            </Button> */}
+            </nav>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden p-2 text-[#002c66] hover:text-primary transition-colors z-30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded"
+              aria-label={isMobileMenuOpen ? "Chiudi menu" : "Apri menu"}
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-navigation"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+
+          {/* Mobile Navigation */}
+          {
+            isMobileMenuOpen && (
+              <nav id="mobile-navigation" className="lg:hidden py-4 border-t border-surface-dark" aria-label="Navigazione mobile">
+                <div className="flex flex-col gap-4">
+                  {navItems.map((item) => (
+                    <a
+                      key={item.href}
+                      href={`#${item.href}`}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="text-sm font-medium text-[#002c66] hover:text-primary transition-colors py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded px-2"
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                  {/* <Button size="sm" className="bg-accent hover:bg-accent-light text-white w-full">
+                Prenota visita
+              </Button> */}
+                </div>
+              </nav>
+            )
+          }
+        </div >
+      </header >
+    </>
+  )
+}

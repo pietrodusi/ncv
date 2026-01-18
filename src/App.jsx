@@ -1,39 +1,34 @@
-import { useState } from 'react';
-import Header from './components/Header';
-import Home from './components/Home';
-import Footer from './components/Footer';
-import Contatti from './components/Contatti';
-import Servizi from './components/Servizi';
-import ChiSiamo from './components/ChiSiamo';
+import { lazy, Suspense } from "react"
+import { Header } from "./components/Header"
+import { Hero } from "./components/Hero"
+import { InfoCards } from "./components/InfoCards"
 
-export default function App() {
+// Lazy load below-fold components
+const Mission = lazy(() => import("./components/Mission").then(m => ({ default: m.Mission })))
+const Services = lazy(() => import("./components/Services").then(m => ({ default: m.Services })))
+const Team = lazy(() => import("./components/Team").then(m => ({ default: m.Team })))
+const Contacts = lazy(() => import("./components/Contacts").then(m => ({ default: m.Contacts })))
+const Footer = lazy(() => import("./components/Footer").then(m => ({ default: m.Footer })))
 
-  const [page, setPage] = useState('Home');
-
-  function handleClick(e) {
-    setPage(e.currentTarget.name)
-  }
-
-  function showPage() {
-    switch (page) {
-      case 'Home':
-        return <Home page={page} setPage={setPage} handleClick={handleClick} />;
-      case 'ChiSiamo':
-        return <ChiSiamo />;
-      case 'Contatti':
-        return <Contatti />;
-      case 'Servizi':
-        return <Servizi />
-      default:
-        return <Home />;
-    }
-  }
-
+function App() {
   return (
-    <div>
-      <Header page={page} setPage={setPage} handleClick={handleClick} />
-        {showPage()}
-      <Footer />
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main>
+        <Hero />
+        <InfoCards />
+        <Suspense fallback={null}>
+          <Mission />
+          <Services />
+          <Team />
+          <Contacts />
+        </Suspense>
+      </main>
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </div>
-  );
+  )
 }
+
+export default App
