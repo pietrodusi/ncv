@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ncvvaldelsa.it/ncv2/sitemap.xml
+Sitemap: https://ncvvaldelsa.it/sitemap.xml
