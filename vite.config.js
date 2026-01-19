@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/ncv2/',
+  base: '/',
   build: {
     rollupOptions: {
       output: {

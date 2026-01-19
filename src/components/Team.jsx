@@ -221,12 +221,12 @@ export function Team() {
             >
               {teamData.map((member) => (
                 <SwiperSlide key={member.id}>
-                  <div className="bg-surface rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-surface-dark group h-full">
-                    <div className="aspect-square overflow-hidden bg-muted min-h-[400px] filter lg:grayscale hover:grayscale-0 transition duration-500 ease-in-out">
+                  <div className="bg-surface rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 border border-surface-dark group h-full">
+                    <div className="aspect-square overflow-hidden bg-muted min-h-[400px] will-change-[filter] filter lg:grayscale hover:grayscale-0 transition-[filter] duration-300 ease-in-out">
                       <img
                         src={member.image}
                         alt={member.name}
-                        className="w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
                     <div className="p-6 min-h-[160px]">

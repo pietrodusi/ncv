@@ -8,10 +8,17 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
+    let ticking = false
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 20)
+          ticking = false
+        })
+        ticking = true
+      }
     }
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -56,14 +63,14 @@ export function Header() {
         Vai al contenuto principale
       </a>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all ease-in-out ${isScrolled || isMobileMenuOpen ? "duration-700 bg-background/95 backdrop-blur-md shadow-md drop-shadow-md inset-shadow-sm" : "duration-200 bg-transparent"}} 
+        className={`fixed top-0 left-0 right-0 z-50 will-change-[background-color,box-shadow] transition-[background-color,box-shadow,backdrop-filter] ease-in-out ${isScrolled || isMobileMenuOpen ? "duration-700 bg-background/95 backdrop-blur-md shadow-md drop-shadow-md inset-shadow-sm" : "duration-200 bg-transparent"}}
       `}
       >
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between h-20 z-20">
             <a href="#home" className="flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 rounded-lg">
               <div
-                className={`absolute w-34 transition-all duration-400 ease-in-out  ${isScrolled || isMobileMenuOpen ? "lg:ml-[5%]" : "md:w-100 lg:w-150 lg:pt-50 lg:mt-30 w-[88dvw] mt-40 drop-shadow-[0_0_10px_rgba(0,0,0,0.9)] drop-shadow-[0_0_30px_rgba(0,0,0,0.7)] drop-shadow-[0_0_60px_rgba(0,0,0,0.5)]"} `}
+                className={`absolute w-34 transition-[width,margin,padding] duration-400 ease-in-out  ${isScrolled || isMobileMenuOpen ? "lg:ml-[5%]" : "md:w-100 lg:w-150 lg:pt-50 lg:mt-30 w-[88dvw] mt-40 drop-shadow-[0_0_25px_rgba(0,0,0,0.7)]"} `}
               >
                 <img src={logo} alt="NCV Logo"
                   className={`w-full h-full object-contain 

@@ -1,7 +1,7 @@
 import { Button } from "./ui/Button"
 import { ArrowRight } from "lucide-react"
-import video1 from '../public/1166915_Home_Indoor_1920x1080.mp4';
-import video2 from '../public/5778893_Coll_wavebreak_Animal_1280x720.mp4';
+import video1 from '../public/1166915_Home_Indoor_1920x1080.webm';
+import video2 from '../public/5778893_Coll_wavebreak_Animal_1280x720.webm';
 import { useState, useEffect, useRef } from "react";
 
 const videos = [video1, video2];
@@ -28,7 +28,7 @@ export function Hero() {
     const video = e.target;
     const timeRemaining = video.duration - video.currentTime;
 
-    if (timeRemaining <= 1 && !nextVideoStarted.current) {
+    if (timeRemaining <= 1.8 && !nextVideoStarted.current) {
       nextVideoStarted.current = true;
       const nextIndex = (currentVideo + 1) % videos.length;
       if (videoRefs.current[nextIndex]) {

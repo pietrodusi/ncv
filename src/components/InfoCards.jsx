@@ -25,10 +25,17 @@ export function InfoCards() {
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
+    let ticking = false
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 20)
+          ticking = false
+        })
+        ticking = true
+      }
     }
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -37,7 +44,7 @@ export function InfoCards() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid md:grid-cols-3 gap-3 lg:gap-6">
           <div
-            className={`bg-surface rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-400 border border-surface-dark transform ${isScrolled ? "opacity-100 translate-y-0" : "motion-safe:opacity-0 motion-safe:translate-y-6"}`}
+            className={`bg-surface rounded-2xl p-8 shadow-lg hover:shadow-xl transition-[box-shadow,opacity,transform] duration-400 border border-surface-dark transform ${isScrolled ? "opacity-100 translate-y-0" : "motion-safe:opacity-0 motion-safe:translate-y-6"}`}
             style={{
               transitionDelay: `${1 * 100}ms`,
             }}
@@ -61,7 +68,7 @@ export function InfoCards() {
             </div>
           </div>
           <div
-            className={`bg-surface rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-400 border border-surface-dark transform ${isScrolled ? "opacity-100 translate-y-0" : "motion-safe:opacity-0 motion-safe:translate-y-6"}`}
+            className={`bg-surface rounded-2xl p-8 shadow-lg hover:shadow-xl transition-[box-shadow,opacity,transform] duration-400 border border-surface-dark transform ${isScrolled ? "opacity-100 translate-y-0" : "motion-safe:opacity-0 motion-safe:translate-y-6"}`}
             style={{
               transitionDelay: `${2 * 100}ms`,
             }}
@@ -120,7 +127,7 @@ export function InfoCards() {
             </div>
           </div>
           <div
-            className={`bg-surface rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-400 border border-surface-dark transform ${isScrolled ? "opacity-100 translate-y-0" : "motion-safe:opacity-0 motion-safe:translate-y-6"}`}
+            className={`bg-surface rounded-2xl p-8 shadow-lg hover:shadow-xl transition-[box-shadow,opacity,transform] duration-400 border border-surface-dark transform ${isScrolled ? "opacity-100 translate-y-0" : "motion-safe:opacity-0 motion-safe:translate-y-6"}`}
             style={{
               transitionDelay: `${3 * 100}ms`,
             }}

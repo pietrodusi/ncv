@@ -159,7 +159,7 @@ export function Services() {
             return (
               <div
                 key={service.id}
-                className="bg-background rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-surface-dark group"
+                className="bg-background rounded-2xl p-6 shadow-sm hover:shadow-lg transition-[box-shadow,transform] duration-300 hover:-translate-y-1 border border-surface-dark group"
               >
                 <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-3 group-hover:bg-accent/20 transition-colors">
                   <Icon className="w-6 h-6 text-accent" />
