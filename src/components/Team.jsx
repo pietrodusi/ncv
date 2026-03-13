@@ -14,6 +14,8 @@ import CatalinaAlbert from '../public/team/CatalinaAlbert.webp'
 import GiuliaBiagioni from '../public/team/GiuliaBiagioni.webp'
 import GiacomoDusi from '../public/team/GiacomoDusi.webp'
 import LauraCarraresi from '../public/team/LauraCarraresi.webp'
+import GiovanniMagnanelli from '../public/team/GiovanniMagnanelli.webp'
+import SamanthaVentani from '../public/team/SamanthaVentani.webp'
 
 import placeholder from '../public/team/LOGO DEFINITIVO-09.webp'
 
@@ -50,7 +52,7 @@ const teamData = [
     id: 5,
     name: "Dott. Giovanni Magnanelli",
     position: "Veterinario",
-    image: placeholder,
+    image: GiovanniMagnanelli,
     description: "Anestesia e terapia del dolore",
   },
   {
@@ -106,7 +108,7 @@ const teamData = [
     id: 13,
     name: "Samantha Ventani",
     position: "Tecnico veterinario",
-    image: placeholder,
+    image: SamanthaVentani,
     description: "Tecnico veterinario",
   },
   {

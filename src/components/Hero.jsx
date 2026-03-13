@@ -58,7 +58,7 @@ export function Hero() {
         />
       ))}
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-ncvColor-grey/50 z-20"></div>
+      <div className="absolute inset-0 bg-ncvColor-grey/20 z-20"></div>
       {/* Content */}
       {/* <div className="container mx-auto relative z-30 pt-[10%]"> */}
       <div className="container relative mx-auto z-30 max-w-3xl lg:max-w-6xl px-8 lg:mt-[40svh] mt-[30%]">
