@@ -16,6 +16,8 @@ import GiacomoDusi from '../public/team/GiacomoDusi.webp'
 import LauraCarraresi from '../public/team/LauraCarraresi.webp'
 import GiovanniMagnanelli from '../public/team/GiovanniMagnanelli.webp'
 import SamanthaVentani from '../public/team/SamanthaVentani.webp'
+import ChiaraPescatori from '../public/team/ChiaraPescatori.webp'
+import MargheritaGarosi from '../public/team/MargheritaGarosi.webp'
 
 import placeholder from '../public/team/LOGO DEFINITIVO-09.webp'
 
@@ -57,62 +59,69 @@ const teamData = [
   },
   {
     id: 6,
+    name: "Margherita Garosi",
+    position: "Tecnico veterinario",
+    image: MargheritaGarosi,
+    description: "Ecografia e medicina interna",
+  },
+  {
+    id: 7,
     name: "Dott. Francesco Paesano",
     position: "Veterinario",
     image: FrancescoPaesano,
     description: "Odontostomatologia e chirurgia maxillo-facciale",
   },
   {
-    id: 7,
+    id: 8,
     name: "Dott. Giuseppe Bartoletta",
     position: "Veterinario",
     image: placeholder,
     description: "Ortopedia",
   },
   {
-    id: 8,
+    id: 9,
     name: "Dott.ssa Chiara Pescatori",
     position: "Veterinaria",
-    image: placeholder,
+    image: ChiaraPescatori,
     description: "Cardiologia ed ecografia",
   },
   {
-    id: 9,
+    id: 10,
     name: "Dott. Daniele Betti",
     position: "Veterinario",
     image: placeholder,
     description: "Oftalmologia",
   },
   {
-    id: 10,
+    id: 11,
     name: "Dott. Alessandro Marigliano",
     position: "Veterinario",
     image: AlessandroMarigliano,
     description: "Animali esotici",
   },
   {
-    id: 11,
+    id: 12,
     name: "Dott.ssa Silvia Porcelli",
     position: "Veterinaria",
     image: placeholder,
     description: "Oncologia",
   },
   {
-    id: 12,
+    id: 13,
     name: "Dott. Emanuele Mussi",
     position: "Veterinario",
     image: placeholder,
     description: "Endoscopia",
   },
   {
-    id: 13,
+    id: 14,
     name: "Samantha Ventani",
     position: "Tecnico veterinario",
     image: SamanthaVentani,
     description: "Tecnico veterinario",
   },
   {
-    id: 14,
+    id: 15,
     name: "Sasha Padula",
     position: "Tecnico veterinario",
     image: SashaPadula,
