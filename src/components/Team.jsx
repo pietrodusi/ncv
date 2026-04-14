@@ -59,7 +59,7 @@ const teamData = [
   },
   {
     id: 6,
-    name: "Margherita Garosi",
+    name: "Dott.ssa Margherita Garosi",
     position: "Veterinaria",
     image: MargheritaGarosi,
     description: "Ecografia e medicina interna",
