@@ -60,7 +60,7 @@ const teamData = [
   {
     id: 6,
     name: "Margherita Garosi",
-    position: "Tecnico veterinario",
+    position: "Veterinaria",
     image: MargheritaGarosi,
     description: "Ecografia e medicina interna",
   },
