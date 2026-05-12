@@ -74,8 +74,8 @@ export function Header() {
                 className={`absolute w-34 transition-[width,margin,padding] duration-400 ease-in-out  ${isScrolled || isMobileMenuOpen ? "lg:ml-[5%]" : "md:w-100 lg:w-150 lg:pt-50 lg:mt-30 w-[88dvw] mt-40 drop-shadow-[0_0_25px_rgba(0,0,0,0.7)]"} `}
               >
                 <img src={logo} alt="NCV Logo"
-                  className={`w-full h-full object-contain 
-                          ${isScrolled || isMobileMenuOpen ? "" : ""}
+                  className={`w-full h-full object-contain transition-[filter] duration-400 ease-in-out
+                          ${isScrolled || isMobileMenuOpen ? "" : "brightness-0 invert"}
                     `}
                 />
               </div>

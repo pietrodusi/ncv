@@ -47,19 +47,28 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <Phone size={16} className="mt-0.5 text-accent flex-shrink-0" />
-                <span className="text-background/70">0577 938997</span>
+                <a href="tel:0577938997" className="text-background/70 hover:text-accent transition-colors">
+                  0577 938997
+                </a>
               </li>
               <li className="flex items-start gap-2">
                 <Mail size={16} className="mt-0.5 text-accent flex-shrink-0" />
-                <span className="text-background/70">ncvvaldelsa@gmail.com</span>
+                <a href="mailto:info@ncvvaldelsa.it" className="text-background/70 hover:text-accent transition-colors">
+                  info@ncvvaldelsa.it
+                </a>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin size={16} className="mt-0.5 text-accent flex-shrink-0" />
-                <span className="text-background/70">
+                <a
+                  href="https://www.google.it/maps/place/Via+Montegrappa,+119,+53036+Poggibonsi+SI/@43.4703455,11.1482556,17z/data=!3m1!4b1!4m5!3m4!1s0x132a3a1cad56d19d:0xad2ce29f2091fb16!8m2!3d43.4703455!4d11.1504496"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-background/70 hover:text-accent transition-colors"
+                >
                   Via Montegrappa 119/121
                   <br />
                   53036 Poggibonsi (SI)
-                </span>
+                </a>
               </li>
               <li className="flex items-start gap-2">
                 <div className="flex gap-3">
