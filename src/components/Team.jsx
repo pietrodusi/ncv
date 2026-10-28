@@ -1,15 +1,15 @@
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Navigation, Pagination, Autoplay } from "swiper/modules"
+import { Navigation, Pagination, Autoplay, FreeMode } from "swiper/modules"
 import { useRef, useEffect, useState } from "react"
 import "swiper/css"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
+import "swiper/css/free-mode"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
 
 import SashaPadula from '../public/team/SashaPadula.webp'
 import FrancescoPaesano from '../public/team/FrancescoPaesano.webp'
-import AlessandroMarigliano from '../public/team/AlessandroMarigliano.webp'
 import CatalinaAlbert from '../public/team/CatalinaAlbert.webp'
 import GiuliaBiagioni from '../public/team/GiuliaBiagioni.webp'
 import GiacomoDusi from '../public/team/GiacomoDusi.webp'
@@ -94,34 +94,27 @@ const teamData = [
   },
   {
     id: 11,
-    name: "Dott. Alessandro Marigliano",
-    position: "Veterinario",
-    image: AlessandroMarigliano,
-    description: "Animali esotici",
-  },
-  {
-    id: 12,
     name: "Dott.ssa Silvia Porcelli",
     position: "Veterinaria",
     image: placeholder,
     description: "Oncologia",
   },
   {
-    id: 13,
+    id: 12,
     name: "Dott. Emanuele Mussi",
     position: "Veterinario",
     image: placeholder,
     description: "Endoscopia",
   },
   {
-    id: 14,
+    id: 13,
     name: "Samantha Ventani",
     position: "Tecnico veterinario",
     image: SamanthaVentani,
     description: "Tecnico veterinario",
   },
   {
-    id: 15,
+    id: 14,
     name: "Sasha Padula",
     position: "Tecnico veterinario",
     image: SashaPadula,
@@ -140,19 +133,18 @@ export function Team() {
     setReady(true);
   }, []);
 
-  // Control autoplay based on visibility - only after Swiper is ready
+  // Pause autoplay while the carousel is offscreen
   useEffect(() => {
     if (!ready) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        const swiper = swiperRef.current?.swiper;
-        if (swiper) {
-          if (entry.isIntersecting) {
-            swiper.autoplay.start();
-          } else {
-            swiper.autoplay.stop();
-          }
+        const autoplay = swiperRef.current?.swiper?.autoplay;
+        if (!autoplay) return;
+        if (entry.isIntersecting) {
+          autoplay.start();
+        } else {
+          autoplay.stop();
         }
       },
       { threshold: 0.1 }
@@ -212,17 +204,19 @@ export function Team() {
           {ready && (
             <Swiper
               ref={swiperRef}
-              modules={[Navigation, Pagination, Autoplay]}
+              modules={[Navigation, Pagination, Autoplay, FreeMode]}
               spaceBetween={32}
               slidesPerView={1}
+              grabCursor={true}
+              freeMode={{ enabled: true, sticky: true, momentumRatio: 1.4, momentumVelocityRatio: 1.2 }}
               navigation={{
                 prevEl: prevRef.current,
                 nextEl: nextRef.current,
               }}
               pagination={{ clickable: true }}
-              speed={1500}
+              speed={600}
               effect="slide"
-              autoplay={{ delay: 1500, pauseOnMouseEnter: true }}
+              autoplay={{ delay: 1500, disableOnInteraction: false, pauseOnMouseEnter: true }}
               breakpoints={{
                 640: { slidesPerView: 2, spaceBetween: 24 },
                 1024: { slidesPerView: 3, spaceBetween: 32 },
