@@ -18,6 +18,8 @@ import GiovanniMagnanelli from '../public/team/GiovanniMagnanelli.webp'
 import SamanthaVentani from '../public/team/SamanthaVentani.webp'
 import ChiaraPescatori from '../public/team/ChiaraPescatori.webp'
 import MargheritaGarosi from '../public/team/MargheritaGarosi.webp'
+import SilviaPorcelli from '../public/team/SilviaPorcelli.webp'
+import ChiaraCappellini from '../public/team/ChiaraCappellini.webp'
 
 import placeholder from '../public/team/LOGO DEFINITIVO-09.webp'
 
@@ -96,7 +98,7 @@ const teamData = [
     id: 11,
     name: "Dott.ssa Silvia Porcelli",
     position: "Veterinaria",
-    image: placeholder,
+    image: SilviaPorcelli,
     description: "Oncologia",
   },
   {
@@ -119,6 +121,13 @@ const teamData = [
     position: "Tecnico veterinario",
     image: SashaPadula,
     description: "Tecnico veterinario",
+  },
+  {
+    id: 15,
+    name: "Chiara Cappellini",
+    position: "Tecnico veterinario",
+    image: ChiaraCappellini,
+    description: "Medicina interna",
   },
 ]
 
