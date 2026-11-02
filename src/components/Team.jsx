@@ -67,6 +67,13 @@ const teamData = [
     description: "Ecografia e medicina interna",
   },
   {
+    id: 15,
+    name: "Dott.ssa Chiara Cappellini",
+    position: "Veterinaria",
+    image: ChiaraCappellini,
+    description: "Medicina interna",
+  },
+  {
     id: 7,
     name: "Dott. Francesco Paesano",
     position: "Veterinario",
@@ -121,13 +128,6 @@ const teamData = [
     position: "Tecnico veterinario",
     image: SashaPadula,
     description: "Tecnico veterinario",
-  },
-  {
-    id: 15,
-    name: "Chiara Cappellini",
-    position: "Tecnico veterinario",
-    image: ChiaraCappellini,
-    description: "Medicina interna",
   },
 ]
 
